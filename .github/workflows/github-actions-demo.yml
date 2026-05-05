@@ -1,0 +1,21 @@
+name: build image, push to ACR
+on:
+  push:
+    branches:
+      - test
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Login to Aliyun Container Registry
+        uses: aliyun/acr-login@v1
+        with:
+          login-server: https://registry.cn-hangzhou.aliyuncs.com
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+      - name: Build and push image
+        run: |
+          docker build -t crpi-jgku4manxs9rc8ub.cn-hangzhou.personal.cr.aliyuncs.com/kwusongxin/nuxt:0.0.1 .
+          docker push crpi-jgku4manxs9rc8ub.cn-hangzhou.personal.cr.aliyuncs.com/kwusongxin/nuxt:0.0.1

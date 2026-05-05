@@ -1,0 +1,6 @@
+version: '1'
+services:
+  nuxt-test:
+    image: crpi-jgku4manxs9rc8ub.cn-hangzhou.personal.cr.aliyuncs.com/kwusongxin/nuxt:0.0.1
+    ports:
+      - 3000:3000
