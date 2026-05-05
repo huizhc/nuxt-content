@@ -17,5 +17,5 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       - name: Build and push image
         run: |
-          docker build -t crpi-jgku4manxs9rc8ub.cn-hangzhou.personal.cr.aliyuncs.com/kwusongxin/nuxt:0.0.1 .
-          docker push crpi-jgku4manxs9rc8ub.cn-hangzhou.personal.cr.aliyuncs.com/kwusongxin/nuxt:0.0.1
+          docker build -t registry.cn-hangzhou.aliyuncs.com/kwusongxin/nuxt:0.0.1 .
+          docker push registry.cn-hangzhou.aliyuncs.com/kwusongxin/nuxt:0.0.1
